@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Feedback Form</title>
+<style>
+body{font-family:Arial;background:#f2f2f2;}
+.box{width:350px;margin:50px auto;padding:20px;
+background:#fff;border-radius:8px;box-shadow:0 0 10px gray;}
+input,select,textarea{width:100%;padding:8px;margin:8px 0;}
+button{width:100%;padding:8px;background:green;
+color:white;border:none;}
+.success{display:none;text-align:center;color:green;
+margin-top:10px;font-weight:bold;}
+</style>
+</head>00
+<body>
+
+<div class="box">
+<h2 align="center">Feedback Form</h2>
+
+<form id="form">
+Name* <input type="text" required>
+Email* <input type="email" required>
+Rating* 
+<select required>
+<option value="">Select</option>
+<option>Excellent</option>
+<option>Good</option>
+<option>Average</option>
+<option>Poor</option>
+</select>
+Comments* 
+<textarea rows="3" required></textarea>
+
+<button type="submit">Submit</button>
+</form>
+
+<div class="success" id="msg">✔ Uploaded Successfully</div>
+</div>
+
+<script>
+document.getElementById("form").onsubmit=function(e){
+e.preventDefault();
+document.getElementById("msg").style.display="block";
+this.reset();
+}
+</script>
+
+</body>
+</html>
